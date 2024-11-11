@@ -98,7 +98,7 @@ class LoginPage extends StatelessWidget {
                           width: screenWidth * 0.6,
                           height: screenHeight * 0.05,
                           decoration: ShapeDecoration(
-                            color: const Color.fromARGB(204, 54, 189, 41),
+                            color: const Color(0xCC147615),
                             shape: RoundedRectangleBorder(
                               side: const BorderSide(width: 1, color: Colors.white),
                               borderRadius: BorderRadius.circular(15),
@@ -342,7 +342,7 @@ class Login extends StatelessWidget {
                           width: 109,
                           height: 42,
                           decoration: ShapeDecoration(
-                            color: const Color.fromARGB(204, 54, 189, 41),
+                            color: const Color(0xCC147615),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(25),
                             ),
@@ -405,7 +405,7 @@ class Login extends StatelessWidget {
                           width: 218,
                           height: 42,
                           decoration: ShapeDecoration(
-                            color: const Color.fromARGB(204, 54, 189, 41),
+                            color: const Color(0xCC147615),
                             shape: RoundedRectangleBorder(
                               side: const BorderSide(width: 1, color: Color.fromARGB(255, 255, 255, 255)),
                               borderRadius: BorderRadius.circular(15),
@@ -705,7 +705,7 @@ class SignUp extends StatelessWidget {
                           width: 109,
                           height: 42,
                           decoration: ShapeDecoration(
-                            color: const Color.fromARGB(204, 54, 189, 41),
+                            color: const Color(0xCC147615),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(25),
                             ),
@@ -768,7 +768,7 @@ class SignUp extends StatelessWidget {
                           width: 218,
                           height: 42,
                           decoration: ShapeDecoration(
-                            color: const Color.fromARGB(204, 54, 189, 41),
+                            color: const Color(0xCC147615),
                             shape: RoundedRectangleBorder(
                               side: const BorderSide(width: 1, color: Colors.white),
                               borderRadius: BorderRadius.circular(15),
