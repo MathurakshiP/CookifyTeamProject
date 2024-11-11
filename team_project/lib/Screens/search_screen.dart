@@ -38,7 +38,7 @@ class SearchScreenState extends State<SearchScreen>{
           image: DecorationImage(
             image: NetworkImage('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.foodiesfeed.com%2F&psig=AOvVaw3TPGFK_Mve5ExxzPdLCV_V&ust=1731346790621000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPDE48Sn0okDFQAAAAAdAAAAABAE'),
             fit: BoxFit.cover,
-          ),   
+          ),
         ),
 
         child: Center(

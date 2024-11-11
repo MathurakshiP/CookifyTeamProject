@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:team_project/Screens/login_page.dart';
-import 'package:team_project/Screens/search_screen.dart';
+//import 'package:team_project/Screens/search_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      title: 'Flutter Recipe App',
+      title: 'Cookify',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.orange[500],

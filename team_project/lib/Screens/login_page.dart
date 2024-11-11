@@ -53,6 +53,7 @@ class LoginPage extends StatelessWidget {
                               height: 420,
                               decoration: const BoxDecoration(
                                 image: DecorationImage(
+                                  //image: NetworkImage("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bonappetit.com%2Fgallery%2F10-most-popular-recipes-january-2022&psig=AOvVaw057jii6NBWdvYfQScAB_x8&ust=1731428434386000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNDGm93X1IkDFQAAAAAdAAAAABAJ"),
                                   image: AssetImage('assets/images/pic.jpg'),
                                   fit: BoxFit.cover,
                                 ),
