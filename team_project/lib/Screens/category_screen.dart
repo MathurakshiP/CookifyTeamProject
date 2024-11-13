@@ -5,7 +5,7 @@ import 'package:team_project/screens/recipe_details_screen.dart';
 class CategoryScreen extends StatefulWidget {
   final String category;
 
-  CategoryScreen({required this.category});
+  const CategoryScreen({super.key, required this.category});
 
   @override
   _CategoryScreenState createState() => _CategoryScreenState();

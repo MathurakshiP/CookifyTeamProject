@@ -4,6 +4,8 @@ import 'package:team_project/providers/saved_food_provider.dart';
 import 'package:team_project/screens/recipe_details_screen.dart'; // Import RecipeDetailScreen
 
 class SavedFoodScreen extends StatelessWidget {
+  const SavedFoodScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final savedFoodProvider = Provider.of<SavedFoodProvider>(context);

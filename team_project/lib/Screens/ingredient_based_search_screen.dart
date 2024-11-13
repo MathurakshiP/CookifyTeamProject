@@ -5,6 +5,8 @@ import 'package:team_project/Screens/recipe_details_screen.dart';
 // import 'package:flutter_dotenv/flutter_dotenv.dart';  
 
 class IngredientSearchScreen extends StatefulWidget {
+  const IngredientSearchScreen({super.key});
+
   @override
   _IngredientSearchScreenState createState() => _IngredientSearchScreenState();
 }

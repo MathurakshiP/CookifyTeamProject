@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
+
   @override
   _ProfileScreenState createState() => _ProfileScreenState();
 }
@@ -195,7 +197,7 @@ class EditProfileDialog extends StatefulWidget {
   final String currentImage;
   final Function(String, String, String) onSave;
 
-  EditProfileDialog({
+  const EditProfileDialog({super.key, 
     required this.currentName,
     required this.currentEmail,
     required this.currentImage,
@@ -207,9 +209,9 @@ class EditProfileDialog extends StatefulWidget {
 }
 
 class _EditProfileDialogState extends State<EditProfileDialog> {
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _imageController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _imageController = TextEditingController();
 
   @override
   void initState() {

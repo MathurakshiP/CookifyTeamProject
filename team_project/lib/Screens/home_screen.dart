@@ -13,6 +13,8 @@ import 'package:team_project/screens/recipe_details_screen.dart';
 import 'package:team_project/screens/search_results_screen.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -54,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     });
 
     try {
-      final randomRecipes = await ApiService().fetchRandomRecipes(number: 5);
+      final randomRecipes = await ApiService().fetchRandomRecipes(number: 1);
       setState(() {
         _randomRecipes = randomRecipes;
         _isLoading = false; // Stop loading once data is fetched
@@ -257,7 +259,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                                     right: 16,
                                     child: Material(
                                       color: Colors.transparent,
-                                      child: Container(
+                                      child: SizedBox(
                                         // color: Colors.white,
                                         height: 200,
                                         child: ListView.builder(
@@ -309,7 +311,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                                         ? CircularProgressIndicator() // Show loading indicator while fetching data
                                         : Padding(
                                             padding: const EdgeInsets.only(left: 16.0), // Add left padding here
-                                            child: Container(
+                                            child: SizedBox(
                                               height: 250, // Adjust height as needed
                                               child: ListView.builder(
                                                 scrollDirection: Axis.horizontal,
@@ -383,7 +385,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
 
                                     _recentlyViewed.isEmpty
                                         ? Center(child: Text('No recently viewed foods'))
-                                        : Container(
+                                        : SizedBox(
                                             height: 250, // Adjust height as needed
                                             child: ListView.builder(
                                               scrollDirection: Axis.horizontal,

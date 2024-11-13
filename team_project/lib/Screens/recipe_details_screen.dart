@@ -8,7 +8,7 @@ import 'package:team_project/providers/shopping_list_provider.dart';
 class RecipeDetailScreen extends StatelessWidget {
   final int recipeId;
 
-  RecipeDetailScreen({required this.recipeId});
+  RecipeDetailScreen({super.key, required this.recipeId});
   Color customGreen = Color.fromRGBO(20, 118, 21, 1.0);
 
   @override

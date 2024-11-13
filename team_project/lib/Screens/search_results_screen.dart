@@ -4,7 +4,7 @@ class SearchResultsScreen extends StatelessWidget {
   final String searchQuery;
   final List<dynamic> recipes;
 
-  SearchResultsScreen({required this.searchQuery, required this.recipes});
+  SearchResultsScreen({super.key, required this.searchQuery, required this.recipes});
   Color customGreen = Color.fromRGBO(20, 118, 21, 1.0);
   
   @override
