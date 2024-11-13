@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:team_project/Screens/ingredient_based_search_screen.dart';
 import 'package:team_project/Screens/meal_planner_screen.dart';
 import 'package:team_project/screens/category_screen.dart';
 import 'package:team_project/screens/saved_food_screen.dart';
@@ -16,6 +17,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin {
   late TabController _tabController;
   final TextEditingController _searchController = TextEditingController();
+  final TextEditingController _ingredientController = TextEditingController();
   List<dynamic> _recipes = [];
   List<dynamic> _randomRecipes = [];
   List<dynamic> _savedRecipes = []; // List to hold saved recipes
@@ -23,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
   bool _isLoading = false; // To handle loading state for random recipes
   int _selectedIndex = 0; // For bottom navigation bar
   List<dynamic> _recentlyViewed = [];
-
+  List<dynamic> _ingredientSearchResults = [];
   @override
   void initState() {
     super.initState();
@@ -128,6 +130,28 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     }
   }
 
+  void _searchByIngredients() async {
+    final ingredients = _ingredientController.text
+        .split(',')
+        .map((ingredient) => ingredient.trim())
+        .toList();
+
+    if (ingredients.isNotEmpty) {
+      try {
+        final apiService = ApiService();
+        final recipes = await apiService.fetchRecipesByIngredients(ingredients);
+        setState(() {
+          _ingredientSearchResults = recipes;
+        });
+      } catch (error) {
+        print('Error: $error');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Failed to load recipes. Please try again.')),
+        );
+      }
+    }
+  }
+
   @override
 Widget build(BuildContext context) {
   return Scaffold(
@@ -148,6 +172,14 @@ Widget build(BuildContext context) {
                 ],
               ),
               
+              SizedBox(
+                  height: 1000,
+                  child: TabBarView(
+                    controller: _tabController,
+                    children: [
+                      // Content for "Explore Recipe" tab
+                      Column(
+                        children: [
               // Search Bar
               Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -182,7 +214,7 @@ Widget build(BuildContext context) {
 
               // Latest Recipes Section (Horizontally Scrollable)
               Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(20.0),
                 child: Text(
                   'Latest Recipes',
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
@@ -247,17 +279,17 @@ Widget build(BuildContext context) {
                     ),
 
               // Recently Viewed Foods Section
-// Recently Viewed Foods Section
-Padding(
-  padding: const EdgeInsets.all(16.0),
-  child: Text(
-    'Recently Viewed Foods',
-    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-  ),
-),
-_recentlyViewed.isEmpty
-    ? Center(child: Text('No recently viewed foods'))
-    : Container(
+
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(
+                        'Recently Viewed Foods',
+                        style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    _recentlyViewed.isEmpty
+                        ? Center(child: Text('No recently viewed foods'))
+                        : Container(
         height: 250, // Adjust height as needed
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
@@ -315,11 +347,24 @@ _recentlyViewed.isEmpty
 
 
 
+                        ],
+                      ),
+
+                      IngredientSearchScreen(),
+
+                       ],
+                  ),
+                ),
 
             ],
           ),
+          
+
+
         ),
-        SavedFoodScreen(),
+
+
+          SavedFoodScreen(),
           // ShoppingListScreen with passed shoppingList
           ShoppingListScreen(),
           // ProfileScreen

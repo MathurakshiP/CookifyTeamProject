@@ -36,9 +36,7 @@ class _IngredientSearchScreenState extends State<IngredientSearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Search by Ingredients'),
-      ),
+      
       body: Column(
         children: [
           Padding(
@@ -84,3 +82,6 @@ class _IngredientSearchScreenState extends State<IngredientSearchScreen> {
     );
   }
 }
+
+
+
