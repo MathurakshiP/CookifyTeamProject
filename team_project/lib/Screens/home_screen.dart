@@ -237,13 +237,21 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                           children: [
                                     // Search Bar
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                                      padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 20.0),
                                       child: TextField(
                                         controller: _searchController,
-                                        onChanged: _onSearchChanged,
+                                        onChanged: (query) {
+                                          // Call the function to handle search
+                                          _onSearchChanged(query);
+                                        },
                                         decoration: InputDecoration(
                                           labelText: 'Search Recipe...',
-                                          border: OutlineInputBorder(),
+                                          border: OutlineInputBorder(
+                                          borderSide: BorderSide(color: Colors.black),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(color: Colors.black),
+                                        ),
                                           suffixIcon: IconButton(
                                             icon: Icon(Icons.search),
                                             onPressed: _searchRecipe,
