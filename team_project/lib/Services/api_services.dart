@@ -53,7 +53,7 @@ class ApiService {
   }
 
   // 4. Fetch Random Recipes
-  Future<List<dynamic>> fetchRandomRecipes({int number = 5}) async {
+  Future<List<dynamic>> fetchRandomRecipes({int number = 1}) async {
   try {
     final response = await http.get(
       Uri.parse('$_baseUrl/recipes/random?number=$number&apiKey=$_apiKey'),
