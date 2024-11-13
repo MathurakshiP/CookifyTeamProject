@@ -8,11 +8,12 @@ class ShoppingListScreen extends StatelessWidget {
     // Access shopping list from the provider
     final shoppingListProvider = Provider.of<ShoppingListProvider>(context);
     final shoppingList = shoppingListProvider.shoppingList;
+    Color customGreen = Color.fromRGBO(20, 118, 21, 1.0);
 
     return Scaffold(
       appBar: AppBar(
         title: Text('Shopping List'),
-        backgroundColor: Colors.green,
+        backgroundColor: customGreen,
         automaticallyImplyLeading: false, // Prevents the back arrow from appearing
       ),
       body: shoppingList.isNotEmpty

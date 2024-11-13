@@ -10,6 +10,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   String userEmail = 'username@example.com';
   String userImage = 'https://via.placeholder.com/150'; // Placeholder image
   bool isDarkMode = false;
+  Color customGreen = Color.fromRGBO(20, 118, 21, 1.0);
 
   // Simulate updating the profile
   void _updateProfile(String name, String email, String imageUrl) {
@@ -31,7 +32,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Profile'),
-        backgroundColor: Colors.green,
+        backgroundColor: customGreen,
         automaticallyImplyLeading: false,
         actions: [
           IconButton(

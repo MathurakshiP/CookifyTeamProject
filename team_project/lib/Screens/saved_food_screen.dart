@@ -8,11 +8,11 @@ class SavedFoodScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final savedFoodProvider = Provider.of<SavedFoodProvider>(context);
     final savedRecipes = savedFoodProvider.savedRecipes;
-
+    Color customGreen = Color.fromRGBO(20, 118, 21, 1.0);
     return Scaffold(
       appBar: AppBar(
         title: Text('Saved Recipes'),
-        backgroundColor: Colors.green,
+        backgroundColor: customGreen,
         automaticallyImplyLeading: false,
       ),
       body: savedRecipes.isNotEmpty

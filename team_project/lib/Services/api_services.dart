@@ -137,6 +137,24 @@ class ApiService {
     return {'shoppingList': ingredients};
   }
 
+  // Update this in your ApiService class
+Future<List<dynamic>> fetchAutocompleteSuggestions(String query) async {
+  if (query.isEmpty) {
+    return [];
+  }
+  final response = await http.get(
+    Uri.parse('$_baseUrl/recipes/complexSearch?query=$query&apiKey=$_apiKey'),
+  );
+
+  if (response.statusCode == 200) {
+    final data = json.decode(response.body);
+    return data['results'] ?? [];
+  } else {
+    throw Exception('Failed to fetch autocomplete suggestions');
+  }
+}
+
+
   // 8. Favorites (Storing locally - this would be implemented in the app's storage)
   List<int> favorites = [];
 

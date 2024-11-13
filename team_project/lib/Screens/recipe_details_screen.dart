@@ -9,6 +9,7 @@ class RecipeDetailScreen extends StatelessWidget {
   final int recipeId;
 
   RecipeDetailScreen({required this.recipeId});
+  Color customGreen = Color.fromRGBO(20, 118, 21, 1.0);
 
   @override
   Widget build(BuildContext context) {

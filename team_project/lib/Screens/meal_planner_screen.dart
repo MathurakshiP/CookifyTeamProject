@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:team_project/Services/api_services.dart'; // Import your ApiService
 
 class MealPlannerScreen extends StatelessWidget {
+  Color customGreen = Color.fromRGBO(20, 118, 21, 1.0);
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

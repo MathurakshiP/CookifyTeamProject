@@ -14,7 +14,7 @@ class CategoryScreen extends StatefulWidget {
 class _CategoryScreenState extends State<CategoryScreen> {
   List<dynamic> _categoryRecipes = [];
   bool _isLoading = false;
-
+  Color customGreen = Color.fromRGBO(20, 118, 21, 1.0);
   @override
   void initState() {
     super.initState();
@@ -49,7 +49,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.category),
-        backgroundColor: Colors.green,
+        backgroundColor: customGreen,
       ),
       body: _isLoading
           ? Center(child: CircularProgressIndicator())
